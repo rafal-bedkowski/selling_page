@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>drivetheproduct — Digital Products</title>
+<meta name="description" content="I help junior PMs and career switchers grow faster than I did. Digital products from a medtech Department Manager — launching soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0D10;
+    --bg-alt:#15181D;
+    --bg-card:#1B1F26;
+    --line:#2A2F38;
+    --text:#F3F0E9;
+    --text-muted:#9AA3AE;
+    --accent:#E8873A;
+    --accent-soft:#3A2A1C;
+    --teal:#57C2A0;
+    --teal-soft:#1B2E28;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;}
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  ::selection{background:var(--accent);color:#0B0D10;}
+
+  .nav{width:100%;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,13,16,0.9);backdrop-filter:blur(6px);z-index:10;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:14px;color:var(--text-muted);}
+  .btn-accent{font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;background:var(--accent);color:#0B0D10 !important;}
+
+  .hero{width:100%;padding:96px 48px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg-alt);font-size:13px;color:var(--text-muted);}
+  .dot{width:8px;height:8px;border-radius:999px;background:var(--teal);}
+  .hero h1{font-size:56px;line-height:1.1;max-width:860px;font-weight:700;}
+  .hero p{font-size:19px;line-height:1.6;color:var(--text-muted);max-width:620px;margin:0;}
+  .hero-cta{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;justify-content:center;}
+  .hero-note{font-size:13px;color:var(--text-muted);margin-top:-8px;}
+  .btn-primary{font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;background:var(--accent);color:#0B0D10 !important;}
+  .btn-secondary{font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;border:1px solid var(--line);color:var(--text) !important;}
+  .btn-card{display:inline-block;font-size:14px;font-weight:600;padding:12px 20px;border-radius:8px;text-align:center;margin-top:auto;}
+  .btn-card-accent{background:var(--accent-soft);color:var(--accent) !important;border:1px solid rgba(232,135,58,0.35);}
+  .btn-card-teal{background:var(--teal-soft);color:var(--teal) !important;border:1px solid rgba(87,194,160,0.35);}
+
+  .strip{width:100%;padding:28px 48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-alt);display:flex;gap:40px;justify-content:center;flex-wrap:wrap;}
+  .strip div{font-size:13px;color:var(--text-muted);}
+
+  .proof{width:100%;padding:56px 48px;display:flex;justify-content:center;}
+  .proof-inner{width:100%;max-width:1160px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;text-align:center;}
+  .proof-stat{display:flex;flex-direction:column;gap:6px;}
+  .proof-num{font-family:'Space Grotesk',system-ui,sans-serif;font-size:34px;font-weight:700;color:var(--accent);}
+  .proof-label{font-size:13px;color:var(--text-muted);}
+
+  .offers{width:100%;padding:88px 48px;display:flex;flex-direction:column;align-items:center;gap:48px;}
+  .offers-head{text-align:center;display:flex;flex-direction:column;gap:12px;max-width:640px;}
+  .offers-head h2{font-size:36px;font-weight:700;}
+  .offers-head p{font-size:16px;color:var(--text-muted);margin:0;}
+  .grid{width:100%;max-width:1160px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+  @media (max-width:720px){.grid{grid-template-columns:1fr;} .proof-inner{grid-template-columns:1fr;} .hero h1{font-size:38px;} .nav{padding:18px 20px;} .nav-links{gap:16px;} .nav-links a{font-size:13px;} .closing h2{font-size:28px !important;}}
+  .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
+  .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .card h3{font-size:20px;font-weight:600;}
+  .card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
+  .card ul{display:flex;flex-direction:column;gap:8px;}
+  .card ul li{font-size:14px;line-height:1.5;color:var(--text);padding-left:20px;position:relative;}
+  .card ul li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:600;}
+  .pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;}
+  .pill-accent{background:var(--accent-soft);color:var(--accent);}
+  .pill-teal{background:var(--teal-soft);color:var(--teal);}
+
+  .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
+  .about-inner{max-width:720px;display:flex;flex-direction:column;gap:20px;}
+  .about h2{font-size:30px;font-weight:700;}
+  .about p{font-size:16px;line-height:1.7;color:var(--text-muted);margin:0;}
+
+  .closing{width:100%;padding:80px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .closing h2{font-size:34px;font-weight:700;max-width:640px;}
+  .closing p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0;}
+
+  footer{width:100%;padding:48px;border-top:1px solid var(--line);background:var(--bg-alt);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  footer .copy{font-size:14px;color:var(--text-muted);}
+  footer .links{display:flex;gap:24px;}
+  footer .links a{font-size:14px;color:var(--text);}
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div style="font-size:18px;font-weight:700;letter-spacing:0.3px;">@drivetheproduct</div>
+    <div class="nav-links">
+      <a href="#offers">Offers</a>
+      <a href="#about">About</a>
+      <a href="https://instagram.com/drivetheproduct">Instagram</a>
+      <a class="btn-accent" href="mailto:bekowe.fara@gmail.com?subject=I%27d%20like%20early%20access">Join the waitlist</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="badge"><span class="dot"></span>Launching soon — limited early access spots</div>
+    <h1>Product skills, without the guesswork.</h1>
+    <p>I help junior PMs and career switchers grow faster than I did — real frameworks from a Department Manager in a regulated medtech environment. No certification fluff, no theory-only advice.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#offers">Get early access</a>
+      <a class="btn-secondary" href="https://instagram.com/drivetheproduct">Follow the journey</a>
+    </div>
+    <div class="hero-note">Free to join the list. First access + founder pricing when each product launches.</div>
+  </section>
+
+  <div class="strip">
+    <div>Dept. Manager, Products &amp; SW Dev @ OPTOPOL (medtech)</div>
+    <div>Certified Scrum Product Owner</div>
+    <div>2+ years in product roles, regulated environment</div>
+    <div>Multidisciplinary team lead</div>
+  </div>
+
+  <section class="proof">
+    <div class="proof-inner">
+      <div class="proof-stat">
+        <div class="proof-num">80+</div>
+        <div class="proof-label">posts breaking down real PM/PO work — no theory</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">3,000+</div>
+        <div class="proof-label">monthly views from junior PMs and career switchers</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">170+</div>
+        <div class="proof-label">people following the journey, growing every week</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offers" class="offers">
+    <div class="offers-head">
+      <h2>What's coming</h2>
+      <p>Built for people figuring out product management for the first time — not seasoned directors. Join the waitlist for the ones you want and you'll get first access, plus founder pricing before public launch.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-head">
+          <h3>Mini-Courses &amp; Trainings</h3>
+          <span class="pill pill-accent">COMING SOON</span>
+        </div>
+        <p>Short, focused courses on the exact skills that get junior PMs their first wins.</p>
+        <ul>
+          <li>Backlog management that doesn't collapse under scope creep</li>
+          <li>Stakeholder conversations you can walk into prepared</li>
+          <li>Writing specs nobody misreads</li>
+        </ul>
+        <a class="btn-card btn-card-accent" href="mailto:bekowe.fara@gmail.com?subject=Notify%20me%20-%20Mini-Courses">Join the waitlist &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>1:1 Consultations &amp; Mentoring</h3>
+          <span class="pill pill-accent">COMING SOON</span>
+        </div>
+        <p>One honest conversation, focused on your actual situation.</p>
+        <ul>
+          <li>Career switch guidance from someone who made the switch</li>
+          <li>CV and interview prep, ATS-ready</li>
+          <li>Working through a real product problem together</li>
+        </ul>
+        <a class="btn-card btn-card-accent" href="mailto:bekowe.fara@gmail.com?subject=Notify%20me%20-%20Consultations">Join the waitlist &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Templates &amp; PDFs</h3>
+          <span class="pill pill-accent">COMING SOON</span>
+        </div>
+        <p>Ready-to-use docs from real product work — the ones nobody hands you on day one.</p>
+        <ul>
+          <li>Discovery briefs you can fill in and send today</li>
+          <li>Roadmap one-pagers stakeholders actually read</li>
+          <li>Stakeholder update templates that build trust</li>
+        </ul>
+        <a class="btn-card btn-card-accent" href="mailto:bekowe.fara@gmail.com?subject=Notify%20me%20-%20Templates">Join the waitlist &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Product Audits for Companies</h3>
+          <span class="pill pill-teal">FOR TEAMS</span>
+        </div>
+        <p>A structured review of your product process, from someone who runs one inside a regulated environment daily.</p>
+        <ul>
+          <li>Backlog health check across your whole pipeline</li>
+          <li>Stakeholder alignment gaps, named clearly</li>
+          <li>Delivery cadence recommendations you can act on</li>
+        </ul>
+        <a class="btn-card btn-card-teal" href="mailto:bekowe.fara@gmail.com?subject=Notify%20me%20-%20Company%20Audit">Ask about an audit &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-inner">
+      <h2>Who's behind this</h2>
+      <p>I'm Rafał — Products and Software Development Department Manager at a medtech company, previously a Junior PM finding my own way through the same mistakes I now write about. @drivetheproduct is a public learning journal: real stories, real mistakes, no guru energy. If you're figuring out product management for the first time, you're the reason this exists.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Ready to stop guessing?</h2>
+    <p>Join the waitlist now — no spam, just a heads-up the moment each product goes live, plus founder pricing for early subscribers.</p>
+    <a class="btn-primary" href="mailto:bekowe.fara@gmail.com?subject=I%27d%20like%20early%20access">Join the waitlist</a>
+  </section>
+
+  <footer>
+    <div class="copy">&copy; drivetheproduct — more of this on Instagram.</div>
+    <div class="links">
+      <a href="https://instagram.com/drivetheproduct">Instagram</a>
+      <a href="mailto:bekowe.fara@gmail.com">Email</a>
+    </div>
+  </footer>
+
+</body>
+</html>

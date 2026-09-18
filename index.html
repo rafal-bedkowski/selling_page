@@ -54,6 +54,20 @@
   .proof-num{font-family:'Space Grotesk',system-ui,sans-serif;font-size:34px;font-weight:700;color:var(--accent);}
   .proof-label{font-size:13px;color:var(--text-muted);}
 
+  .freebies{width:100%;padding:80px 48px;display:flex;flex-direction:column;align-items:center;gap:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-alt);}
+  .freebies-head{text-align:center;display:flex;flex-direction:column;gap:12px;max-width:640px;}
+  .freebies-head h2{font-size:32px;font-weight:700;}
+  .freebies-head p{font-size:16px;color:var(--text-muted);margin:0;}
+  .freebie-card{width:100%;max-width:640px;background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px;}
+  .freebie-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .freebie-card h3{font-size:20px;font-weight:600;}
+  .freebie-card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
+  .freebie-form{display:flex;flex-direction:column;gap:12px;}
+  .freebie-form input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg-alt);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;}
+  .freebie-form input::placeholder{color:var(--text-muted);}
+  .freebie-form button{border:none;cursor:pointer;font-family:'IBM Plex Sans',system-ui,sans-serif;}
+  .freebie-note{font-size:12px;color:var(--text-muted);margin:0;}
+
   .offers{width:100%;padding:88px 48px;display:flex;flex-direction:column;align-items:center;gap:48px;}
   .offers-head{text-align:center;display:flex;flex-direction:column;gap:12px;max-width:640px;}
   .offers-head h2{font-size:36px;font-weight:700;}
@@ -91,6 +105,7 @@
   <nav class="nav">
     <div style="font-size:18px;font-weight:700;letter-spacing:0.3px;">@drivetheproduct</div>
     <div class="nav-links">
+      <a href="#freebies">Freebies</a>
       <a href="#offers">Offers</a>
       <a href="#about">About</a>
       <a href="https://instagram.com/drivetheproduct">Instagram</a>
@@ -130,6 +145,29 @@
         <div class="proof-num">170+</div>
         <div class="proof-label">people following the journey, growing every week</div>
       </div>
+    </div>
+  </section>
+
+  <section id="freebies" class="freebies">
+    <div class="freebies-head">
+      <h2>Free stuff, no waitlist</h2>
+      <p>Grab something useful right now — drop your name and email and it lands straight in your inbox.</p>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-card-head">
+        <h3>7 AI Prompts Every PM Should Steal</h3>
+        <span class="pill pill-teal">FREE PDF</span>
+      </div>
+      <p>The exact prompts I use to speed up discovery, write specs, and prep for stakeholder conversations — copy, paste, adapt.</p>
+      <form class="freebie-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+        <input type="text" name="name" placeholder="Your first name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <input type="hidden" name="_subject" value="New freebie signup — 7 AI Prompts for PMs">
+        <input type="hidden" name="_next" value="https://raw.githubusercontent.com/rafal-bedkowski/selling_page/main/freebie/7_AI_Prompts_PM.pdf">
+        <button type="submit" class="btn-card btn-card-teal">Send me the PDF &rarr;</button>
+      </form>
+      <p class="freebie-note">No spam. Unsubscribe anytime. You'll also start hearing about future waitlist openings.</p>
     </div>
   </section>
 

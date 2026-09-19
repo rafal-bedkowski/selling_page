@@ -74,6 +74,40 @@
   .offers-head p{font-size:16px;color:var(--text-muted);margin:0;}
   .grid{width:100%;max-width:1160px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
   @media (max-width:720px){.grid{grid-template-columns:1fr;} .proof-inner{grid-template-columns:1fr;} .hero h1{font-size:38px;} .nav{padding:18px 20px;} .nav-links{gap:16px;} .nav-links a{font-size:13px;} .closing h2{font-size:28px !important;}}
+
+  @media (max-width:480px){
+    .nav{padding:14px 16px;flex-wrap:wrap;row-gap:10px;}
+    .nav-links{gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    .nav-links a:not(.btn-accent){font-size:12px;}
+    .btn-accent{padding:8px 14px;font-size:13px;}
+    .hero{padding:56px 20px 48px;gap:18px;}
+    .hero h1{font-size:28px;}
+    .hero p{font-size:15px;}
+    .hero-cta{width:100%;}
+    .hero-cta a{flex:1 1 auto;text-align:center;}
+    .strip{padding:20px 16px;gap:18px;}
+    .strip div{font-size:12px;}
+    .proof{padding:40px 20px;}
+    .freebies{padding:48px 20px;gap:28px;}
+    .freebies-head h2{font-size:24px;}
+    .freebie-card{padding:20px;}
+    .offers{padding:48px 20px;}
+    .offers-head h2{font-size:26px;}
+    .card{padding:20px;}
+    .about{padding:48px 20px;}
+    .closing{padding:48px 20px;}
+    footer{padding:32px 20px;flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+
+  /* Kit newsletter embed — match dark theme + stay responsive */
+  #newsletter .freebie-card{width:100%;max-width:480px;padding:24px;}
+  .formkit-form{display:flex !important;flex-direction:column !important;gap:12px !important;width:100% !important;max-width:100% !important;}
+  .formkit-fields{display:flex !important;flex-direction:column !important;gap:12px !important;width:100% !important;}
+  .formkit-field{width:100% !important;}
+  .formkit-input{width:100% !important;box-sizing:border-box !important;background:var(--bg-alt) !important;border:1px solid var(--line) !important;color:var(--text) !important;border-radius:8px !important;padding:12px 14px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:14px !important;}
+  .formkit-input::placeholder{color:var(--text-muted) !important;}
+  .formkit-submit{width:100% !important;background:var(--accent) !important;color:#0B0D10 !important;border:none !important;border-radius:8px !important;padding:12px 14px !important;font-weight:600 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;cursor:pointer !important;}
+  .formkit-alert{font-size:12px !important;}
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .card h3{font-size:20px;font-weight:600;}
@@ -137,14 +171,14 @@
   <div class="strip">
     <div>Dept. Manager, Products &amp; SW Dev @ OPTOPOL (medtech)</div>
     <div>Certified Scrum Product Owner</div>
-    <div>3+ years in product roles, regulated environment</div>
+    <div>Finishing CS Engineering degree (2027)</div>
     <div>Multidisciplinary team lead</div>
   </div>
 
   <section class="proof">
     <div class="proof-inner">
       <div class="proof-stat">
-        <div class="proof-num">80+</div>
+        <div class="proof-num">120+</div>
         <div class="proof-label">posts breaking down real PM/PO work — no theory</div>
       </div>
       <div class="proof-stat">

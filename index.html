@@ -111,7 +111,11 @@
   }
 
   /* Kit newsletter embed — layout fallback only; colors are set in Kit's own Custom CSS panel */
-  #newsletter .freebie-card{width:100%;max-width:380px;padding:20px;}
+  .newsletter-card{width:100%;max-width:420px;background:transparent;border:none;padding:0;gap:16px;}
+  .newsletter-card h2{font-size:32px;font-weight:700;}
+  .newsletter-card p{font-size:16px;line-height:1.6;color:var(--text-muted);margin:0;max-width:520px;}
+  .newsletter-skip{font-size:12px;letter-spacing:0.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:underline;cursor:pointer;margin-top:-4px;}
+  .newsletter-skip:hover{color:var(--text);}
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .card h3{font-size:20px;font-weight:600;}
@@ -222,12 +226,11 @@
   </section>
 
   <section id="newsletter" class="freebies" style="background:var(--bg);border-top:none;">
-    <div class="freebies-head">
+    <div class="freebie-card newsletter-card" style="align-items:center;text-align:center;">
       <h2>You're not behind. You just don't have the map yet.</h2>
       <p>That feeling — like everyone else got a manual you never received — isn't true, and it's not permanent. Every week, one real story from someone walking the same road, just a few steps ahead: what worked, what fell apart, what I wish someone had told me on day one. Not lectures from above. Just someone in it with you, sharing what he's finding along the way.</p>
-    </div>
-    <div class="freebie-card" style="align-items:center;">
       <script async data-uid="d423bae253" src="https://drivetheproduct.kit.com/d423bae253/index.js"></script>
+      <span class="newsletter-skip" id="newsletterSkip">No thanks</span>
     </div>
   </section>
 
@@ -340,6 +343,13 @@
             links.classList.remove('open');
             toggle.setAttribute('aria-expanded', 'false');
           });
+        });
+      }
+      var skip = document.getElementById('newsletterSkip');
+      if(skip){
+        skip.addEventListener('click', function(){
+          var section = document.getElementById('newsletter');
+          if(section){ section.style.display = 'none'; }
         });
       }
     })();

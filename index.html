@@ -182,7 +182,7 @@
         <div class="proof-label">posts breaking down real PM/PO work — no theory</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">176,000+</div>
+        <div class="proof-num">182,500+</div>
         <div class="proof-label">monthly views from junior PMs and career switchers</div>
       </div>
       <div class="proof-stat">
@@ -319,6 +319,65 @@
       <button class="cookie-btn cookie-btn-accept" id="cookieAccept" type="button">Accept</button>
     </div>
   </div>
+
+  <script>
+    (function(){
+      function styleKitForm(){
+        var container = document.querySelector('#newsletter .freebie-card');
+        if(!container) return;
+        var form = container.querySelector('.formkit-form');
+        var fields = container.querySelector('.formkit-fields');
+        var input = container.querySelector('.formkit-input');
+        var button = container.querySelector('.formkit-submit');
+        if(form){
+          form.style.setProperty('width','100%','important');
+          form.style.setProperty('max-width','100%','important');
+          form.style.setProperty('margin','0','important');
+        }
+        if(fields){
+          fields.style.setProperty('display','flex','important');
+          fields.style.setProperty('flex-direction','column','important');
+          fields.style.setProperty('gap','12px','important');
+          fields.style.setProperty('width','100%','important');
+          fields.style.setProperty('margin','0','important');
+        }
+        if(input){
+          input.style.setProperty('width','100%','important');
+          input.style.setProperty('box-sizing','border-box','important');
+          input.style.setProperty('background','#15181D','important');
+          input.style.setProperty('border','1px solid #2A2F38','important');
+          input.style.setProperty('color','#F3F0E9','important');
+          input.style.setProperty('border-radius','8px','important');
+          input.style.setProperty('padding','12px 14px','important');
+          input.style.setProperty('font-family',"'IBM Plex Sans',system-ui,sans-serif",'important');
+          input.style.setProperty('font-size','14px','important');
+          input.style.setProperty('margin','0','important');
+        }
+        if(button){
+          button.style.setProperty('width','100%','important');
+          button.style.setProperty('background','#E8873A','important');
+          button.style.setProperty('color','#0B0D10','important');
+          button.style.setProperty('border','none','important');
+          button.style.setProperty('border-radius','8px','important');
+          button.style.setProperty('padding','12px 14px','important');
+          button.style.setProperty('font-weight','600','important');
+          button.style.setProperty('font-family',"'IBM Plex Sans',system-ui,sans-serif",'important');
+          button.style.setProperty('font-size','14px','important');
+          button.style.setProperty('cursor','pointer','important');
+          button.style.setProperty('margin','0','important');
+        }
+      }
+      var newsletterEl = document.querySelector('#newsletter');
+      if(newsletterEl && window.MutationObserver){
+        var observer = new MutationObserver(function(){ styleKitForm(); });
+        observer.observe(newsletterEl, {childList:true, subtree:true});
+      }
+      styleKitForm();
+      setTimeout(styleKitForm, 800);
+      setTimeout(styleKitForm, 2000);
+      setTimeout(styleKitForm, 4000);
+    })();
+  </script>
 
   <script>
     (function(){

@@ -47,8 +47,9 @@
   .btn-card-accent{background:var(--accent-soft);color:var(--accent) !important;border:1px solid rgba(232,135,58,0.35);}
   .btn-card-teal{background:var(--teal-soft);color:var(--teal) !important;border:1px solid rgba(87,194,160,0.35);}
 
-  .strip{width:100%;padding:28px 48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-alt);display:flex;gap:40px;justify-content:center;flex-wrap:wrap;}
-  .strip div{font-size:13px;color:var(--text-muted);}
+  .strip{width:100%;padding:32px 48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-alt);display:flex;gap:40px;justify-content:center;flex-wrap:wrap;}
+  .strip div{font-size:14px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:9px;letter-spacing:0.1px;}
+  .strip-dot{width:6px;height:6px;border-radius:999px;background:var(--teal);flex-shrink:0;}
 
   .proof{width:100%;padding:56px 48px;display:flex;justify-content:center;}
   .proof-inner{width:100%;max-width:1160px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;text-align:center;}
@@ -95,8 +96,8 @@
     .hero p{font-size:15px;}
     .hero-cta{width:100%;}
     .hero-cta a{flex:1 1 auto;text-align:center;}
-    .strip{padding:20px 16px;gap:18px;}
-    .strip div{font-size:12px;}
+    .strip{padding:22px 16px;gap:18px;}
+    .strip div{font-size:13px;}
     .proof{padding:40px 20px;}
     .freebies{padding:48px 20px;gap:28px;}
     .freebies-head h2{font-size:24px;}
@@ -175,9 +176,9 @@
   </section>
 
   <div class="strip">
-    <div>Dept. Manager, Products &amp; SW Dev @ OPTOPOL (medtech)</div>
-    <div>Certified Scrum Product Owner</div>
-    <div>Multidisciplinary team lead</div>
+    <div><span class="strip-dot"></span>Dept. Manager, Products &amp; SW Dev @ OPTOPOL (medtech)</div>
+    <div><span class="strip-dot"></span>Certified Scrum Product Owner</div>
+    <div><span class="strip-dot"></span>Multidisciplinary team lead</div>
   </div>
 
   <section class="proof">

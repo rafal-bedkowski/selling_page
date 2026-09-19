@@ -109,15 +109,8 @@
     footer{padding:32px 20px;flex-direction:column;align-items:flex-start;gap:12px;}
   }
 
-  /* Kit newsletter embed — match dark theme + stay responsive */
+  /* Kit newsletter embed — layout fallback only; colors are set in Kit's own Custom CSS panel */
   #newsletter .freebie-card{width:100%;max-width:480px;padding:24px;}
-  .formkit-form{display:flex !important;flex-direction:column !important;gap:12px !important;width:100% !important;max-width:100% !important;}
-  .formkit-fields{display:flex !important;flex-direction:column !important;gap:12px !important;width:100% !important;}
-  .formkit-field{width:100% !important;}
-  .formkit-input{width:100% !important;box-sizing:border-box !important;background:var(--bg-alt) !important;border:1px solid var(--line) !important;color:var(--text) !important;border-radius:8px !important;padding:12px 14px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:14px !important;}
-  .formkit-input::placeholder{color:var(--text-muted) !important;}
-  .formkit-submit{width:100% !important;background:var(--accent) !important;color:#0B0D10 !important;border:none !important;border-radius:8px !important;padding:12px 14px !important;font-weight:600 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;cursor:pointer !important;}
-  .formkit-alert{font-size:12px !important;}
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .card h3{font-size:20px;font-weight:600;}
@@ -348,65 +341,6 @@
           });
         });
       }
-    })();
-  </script>
-
-  <script>
-    (function(){
-      function styleKitForm(){
-        var container = document.querySelector('#newsletter .freebie-card');
-        if(!container) return;
-        var form = container.querySelector('.formkit-form');
-        var fields = container.querySelector('.formkit-fields');
-        var input = container.querySelector('.formkit-input');
-        var button = container.querySelector('.formkit-submit');
-        if(form){
-          form.style.setProperty('width','100%','important');
-          form.style.setProperty('max-width','100%','important');
-          form.style.setProperty('margin','0','important');
-        }
-        if(fields){
-          fields.style.setProperty('display','flex','important');
-          fields.style.setProperty('flex-direction','column','important');
-          fields.style.setProperty('gap','12px','important');
-          fields.style.setProperty('width','100%','important');
-          fields.style.setProperty('margin','0','important');
-        }
-        if(input){
-          input.style.setProperty('width','100%','important');
-          input.style.setProperty('box-sizing','border-box','important');
-          input.style.setProperty('background','#15181D','important');
-          input.style.setProperty('border','1px solid #2A2F38','important');
-          input.style.setProperty('color','#F3F0E9','important');
-          input.style.setProperty('border-radius','8px','important');
-          input.style.setProperty('padding','12px 14px','important');
-          input.style.setProperty('font-family',"'IBM Plex Sans',system-ui,sans-serif",'important');
-          input.style.setProperty('font-size','14px','important');
-          input.style.setProperty('margin','0','important');
-        }
-        if(button){
-          button.style.setProperty('width','100%','important');
-          button.style.setProperty('background','#E8873A','important');
-          button.style.setProperty('color','#0B0D10','important');
-          button.style.setProperty('border','none','important');
-          button.style.setProperty('border-radius','8px','important');
-          button.style.setProperty('padding','12px 14px','important');
-          button.style.setProperty('font-weight','600','important');
-          button.style.setProperty('font-family',"'IBM Plex Sans',system-ui,sans-serif",'important');
-          button.style.setProperty('font-size','14px','important');
-          button.style.setProperty('cursor','pointer','important');
-          button.style.setProperty('margin','0','important');
-        }
-      }
-      var newsletterEl = document.querySelector('#newsletter');
-      if(newsletterEl && window.MutationObserver){
-        var observer = new MutationObserver(function(){ styleKitForm(); });
-        observer.observe(newsletterEl, {childList:true, subtree:true});
-      }
-      styleKitForm();
-      setTimeout(styleKitForm, 800);
-      setTimeout(styleKitForm, 2000);
-      setTimeout(styleKitForm, 4000);
     })();
   </script>
 

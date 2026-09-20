@@ -21,6 +21,7 @@
     --teal-soft:#1B2E28;
   }
   *{box-sizing:border-box;}
+  html,body{overflow-x:hidden;max-width:100%;}
   body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;}
   h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;}
   a{color:inherit;text-decoration:none;}
@@ -119,7 +120,7 @@
   .newsletter-skip{font-size:13px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;color:var(--text-muted);text-decoration:underline;cursor:pointer;margin-top:8px;}
   .newsletter-skip:hover{color:var(--text);}
   /* Fallback styling for the Kit embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
-  #newsletter .formkit-form{width:100% !important;max-width:100% !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #newsletter .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
   #newsletter .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
   #newsletter .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
   #newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}

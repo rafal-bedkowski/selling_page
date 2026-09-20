@@ -113,6 +113,21 @@
     .newsletter-card p{font-size:14px;}
   }
 
+  .products-waitlist-card{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin:0 auto;}
+  .products-waitlist-card h3{font-size:22px;font-weight:700;}
+  .products-waitlist-card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
+  #products-waitlist .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #products-waitlist .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
+  #products-waitlist .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#3A2A1C !important;color:#E8873A !important;border:1px solid rgba(232,135,58,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
+  #products-waitlist .formkit-submit>span{padding:0 !important;display:block !important;}
+  #products-waitlist .formkit-powered-by,#products-waitlist .formkit-powered-by-convertkit-text,#products-waitlist [data-element="powered-by"]{display:none !important;}
+  @media (max-width:480px){
+    #products-waitlist .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #products-waitlist .formkit-submit{padding:14px !important;font-size:14px !important;}
+  }
   /* Kit newsletter embed — layout fallback only; colors are set in Kit's own Custom CSS panel */
   .newsletter-card{width:100%;max-width:420px;background:transparent;border:none;padding:0;gap:16px;}
   .newsletter-card h2{font-size:32px;font-weight:700;}
@@ -180,7 +195,7 @@
         <a href="#about">About</a>
         <a href="https://instagram.com/drivetheproduct">Instagram</a>
       </div>
-      <a class="btn-accent" href="mailto:drivetheproduct@gmail.com?subject=I%27d%20like%20early%20access">Join the waitlist</a>
+      <a class="btn-accent" href="#products-waitlist">Join the waitlist</a>
     </div>
   </nav>
 
@@ -256,6 +271,12 @@
       <p>Built for people figuring out product management for the first time — not seasoned directors. Join the waitlist for the ones you want and you'll get first access, plus founder pricing before public launch.</p>
     </div>
 
+    <div class="products-waitlist-card" id="products-waitlist">
+      <h3>Get notified the moment these launch</h3>
+      <p>First access + founder pricing, no spam.</p>
+      <script async data-uid="a7a0a2724e" src="https://drivetheproduct.kit.com/a7a0a2724e/index.js"></script>
+    </div>
+
     <div class="grid">
       <div class="card">
         <div class="card-head">
@@ -268,7 +289,7 @@
           <li>Stakeholder conversations you can walk into prepared</li>
           <li>Writing specs nobody misreads</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="mailto:drivetheproduct@gmail.com?subject=Notify%20me%20-%20Mini-Courses">Join the waitlist &rarr;</a>
+        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
@@ -282,7 +303,7 @@
           <li>CV and interview prep, ATS-ready</li>
           <li>Working through a real product problem together</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="mailto:drivetheproduct@gmail.com?subject=Notify%20me%20-%20Consultations">Join the waitlist &rarr;</a>
+        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
@@ -296,7 +317,7 @@
           <li>Roadmap one-pagers stakeholders actually read</li>
           <li>Stakeholder update templates that build trust</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="mailto:drivetheproduct@gmail.com?subject=Notify%20me%20-%20Templates">Join the waitlist &rarr;</a>
+        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
@@ -325,7 +346,7 @@
   <section class="closing">
     <h2>Ready to stop guessing?</h2>
     <p>Join the waitlist now — no spam, just a heads-up the moment each product goes live, plus founder pricing for early subscribers.</p>
-    <a class="btn-primary" href="mailto:drivetheproduct@gmail.com?subject=I%27d%20like%20early%20access">Join the waitlist</a>
+    <a class="btn-primary" href="#products-waitlist">Join the waitlist</a>
   </section>
 
   <footer>

@@ -216,7 +216,7 @@
         <span class="pill pill-teal">FREE PDF</span>
       </div>
       <p>The exact prompts I use to speed up discovery, write specs, and prep for stakeholder conversations — copy, paste, adapt.</p>
-      <form class="freebie-form" action="https://formspree.io/f/xqpaazpn" method="POST">
+      <form class="freebie-form" id="freebieForm" action="https://formspree.io/f/xqpaazpn" method="POST">
         <input type="text" name="name" placeholder="Your first name" required>
         <input type="email" name="email" placeholder="Your email" required>
         <input type="hidden" name="_subject" value="New freebie signup — 7 AI Prompts for PMs">
@@ -344,6 +344,29 @@
           a.addEventListener('click', function(){
             links.classList.remove('open');
             toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+      var freebieForm = document.getElementById('freebieForm');
+      if(freebieForm){
+        freebieForm.addEventListener('submit', function(e){
+          e.preventDefault();
+          var submitBtn = freebieForm.querySelector('button[type="submit"]');
+          var originalText = submitBtn ? submitBtn.textContent : '';
+          if(submitBtn){ submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+          fetch(freebieForm.action, {
+            method: 'POST',
+            body: new FormData(freebieForm),
+            headers: { 'Accept': 'application/json' }
+          }).then(function(response){
+            if(response.ok){
+              window.location.href = 'thanks.html';
+            } else {
+              throw new Error('Submission failed');
+            }
+          }).catch(function(){
+            if(submitBtn){ submitBtn.textContent = originalText; submitBtn.disabled = false; }
+            alert('Something went wrong — please try again or email drivetheproduct@gmail.com directly.');
           });
         });
       }

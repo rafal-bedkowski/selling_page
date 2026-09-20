@@ -118,6 +118,19 @@
   .newsletter-card p{font-size:16px;line-height:1.6;color:var(--text-muted);margin:0;max-width:520px;}
   .newsletter-skip{font-size:13px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;color:var(--text-muted);text-decoration:underline;cursor:pointer;margin-top:8px;}
   .newsletter-skip:hover{color:var(--text);}
+  /* Fallback styling for the Kit embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
+  #newsletter .formkit-form{width:100% !important;max-width:100% !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #newsletter .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
+  #newsletter .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
+  #newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #newsletter .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
+  #newsletter .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
+  #newsletter .formkit-submit>span{padding:0 !important;display:block !important;}
+  #newsletter .formkit-powered-by,#newsletter .formkit-powered-by-convertkit-text,#newsletter [data-element="powered-by"]{display:none !important;}
+  @media (max-width:480px){
+    #newsletter .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #newsletter .formkit-submit{padding:14px !important;font-size:14px !important;}
+  }
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .card h3{font-size:20px;font-weight:600;}

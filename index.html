@@ -164,13 +164,25 @@
   .card-quote figcaption strong{color:var(--text);font-weight:600;}
   .card-quote figcaption a{color:var(--teal);text-decoration:none;}
   .card-quote figcaption a:hover{text-decoration:underline;}
-  .consulting-modal{position:fixed;inset:0;background:rgba(11,13,16,0.75);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;}
+  .consulting-modal{position:fixed;inset:0;background:rgba(11,13,16,0.75);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;overflow-y:auto;}
   .consulting-modal.open{display:flex;}
-  .consulting-modal-card{position:relative;width:100%;max-width:440px;background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
-  .consulting-modal-card h3{font-size:20px;font-weight:600;margin:0;}
-  .consulting-modal-card>p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
-  .consulting-modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:22px;line-height:1;cursor:pointer;padding:4px;}
+  .consulting-modal-card{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 40px);overflow-y:auto;background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:18px;}
+  .consulting-modal-card h3{font-size:24px;font-weight:600;margin:0;}
+  .consulting-modal-card>p{font-size:15px;line-height:1.6;color:var(--text-muted);margin:0;}
+  .consulting-modal-card .freebie-form{gap:14px;}
+  .consulting-modal-card .freebie-form textarea{min-height:120px;}
+  .consulting-modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:26px;line-height:1;cursor:pointer;padding:6px;}
   .consulting-modal-close:hover{color:var(--text);}
+  @media (max-width:480px){
+    .consulting-modal{padding:0;align-items:flex-end;}
+    .consulting-modal-card{max-width:100%;max-height:calc(100vh - 32px);border-radius:20px 20px 0 0;padding:28px 20px 24px;}
+    .consulting-modal-card h3{font-size:20px;}
+    .consulting-modal-card>p{font-size:14px;}
+    .consulting-modal-card .freebie-form input,
+    .consulting-modal-card .freebie-form textarea{font-size:16px;padding:14px;}
+    .consulting-modal-card .freebie-form textarea{min-height:100px;}
+    .consulting-modal-close{top:12px;right:12px;}
+  }
 
   .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
   .about-inner{max-width:720px;display:flex;flex-direction:column;gap:20px;}

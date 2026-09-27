@@ -164,6 +164,13 @@
   .card-quote figcaption strong{color:var(--text);font-weight:600;}
   .card-quote figcaption a{color:var(--teal);text-decoration:none;}
   .card-quote figcaption a:hover{text-decoration:underline;}
+  .consulting-modal{position:fixed;inset:0;background:rgba(11,13,16,0.75);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;}
+  .consulting-modal.open{display:flex;}
+  .consulting-modal-card{position:relative;width:100%;max-width:440px;background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
+  .consulting-modal-card h3{font-size:20px;font-weight:600;margin:0;}
+  .consulting-modal-card>p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
+  .consulting-modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:22px;line-height:1;cursor:pointer;padding:4px;}
+  .consulting-modal-close:hover{color:var(--text);}
 
   .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
   .about-inner{max-width:720px;display:flex;flex-direction:column;gap:20px;}
@@ -190,6 +197,20 @@
 </style>
 </head>
 <body>
+  <div class="consulting-modal" id="consultingModal">
+    <div class="consulting-modal-card">
+      <button type="button" class="consulting-modal-close" id="consultingCloseBtn" aria-label="Close">&times;</button>
+      <h3>Ask about consulting</h3>
+      <p>It's just me on the other end of this — happy to hear whatever's on your mind.</p>
+      <form class="freebie-form" id="consultingForm" action="https://formspree.io/f/xnpnoody" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <textarea name="message" placeholder="What do you need help with?" required rows="3"></textarea>
+        <input type="hidden" name="_subject" value="New consulting inquiry — drivetheproduct.pm">
+        <button type="submit" class="btn-card btn-card-teal">Send &rarr;</button>
+      </form>
+      <p class="freebie-note" id="consultingSuccess" style="display:none;">Thanks — I'll get back to you soon.</p>
+    </div>
+  </div>
 
   <nav class="nav">
     <div style="font-size:18px;font-weight:700;letter-spacing:0.3px;">@drivetheproduct</div>
@@ -343,13 +364,7 @@
           <blockquote>&ldquo;A complete teardown of our product from a new user&rsquo;s perspective. Exactly the kind of detailed feedback we were hoping for, and it&rsquo;s genuinely helping us identify gaps and improve the experience.&rdquo;</blockquote>
           <figcaption><strong><a href="https://www.instagram.com/_arif.khan._/" target="_blank" rel="noopener">Arif Khan</a></strong>, Co-founder, Builder Kopilot</figcaption>
         </figure>
-        <form class="freebie-form" id="consultingForm" action="https://formspree.io/f/xnpnoody" method="POST">
-          <input type="text" name="name" placeholder="Your name" required>
-          <textarea name="message" placeholder="What do you need help with?" required rows="3"></textarea>
-          <input type="hidden" name="_subject" value="New consulting inquiry — drivetheproduct.pm">
-          <button type="submit" class="btn-card btn-card-teal">Ask about consulting &rarr;</button>
-        </form>
-        <p class="freebie-note" id="consultingSuccess" style="display:none;">Thanks — I'll get back to you soon.</p>
+        <button type="button" class="btn-card btn-card-teal" id="consultingOpenBtn">Ask about consulting &rarr;</button>
       </div>
     </div>
   </section>
@@ -423,7 +438,37 @@
           });
         });
       }
+      var consultingModal = document.getElementById('consultingModal');
+      var consultingOpenBtn = document.getElementById('consultingOpenBtn');
+      var consultingCloseBtn = document.getElementById('consultingCloseBtn');
       var consultingForm = document.getElementById('consultingForm');
+      var consultingSuccess = document.getElementById('consultingSuccess');
+      function openConsultingModal(){
+        if(!consultingModal) return;
+        consultingModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        var nameInput = consultingForm ? consultingForm.querySelector('input[name="name"]') : null;
+        if(nameInput){ nameInput.focus(); }
+      }
+      function closeConsultingModal(){
+        if(!consultingModal) return;
+        consultingModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      if(consultingOpenBtn){
+        consultingOpenBtn.addEventListener('click', openConsultingModal);
+      }
+      if(consultingCloseBtn){
+        consultingCloseBtn.addEventListener('click', closeConsultingModal);
+      }
+      if(consultingModal){
+        consultingModal.addEventListener('click', function(e){
+          if(e.target === consultingModal){ closeConsultingModal(); }
+        });
+      }
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){ closeConsultingModal(); }
+      });
       if(consultingForm){
         consultingForm.addEventListener('submit', function(e){
           e.preventDefault();
@@ -437,8 +482,7 @@
           }).then(function(response){
             if(response.ok){
               consultingForm.style.display = 'none';
-              var successMsg = document.getElementById('consultingSuccess');
-              if(successMsg){ successMsg.style.display = 'block'; }
+              if(consultingSuccess){ consultingSuccess.style.display = 'block'; }
             } else {
               throw new Error('Submission failed');
             }

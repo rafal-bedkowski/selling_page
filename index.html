@@ -157,6 +157,12 @@
   .pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;}
   .pill-accent{background:var(--accent-soft);color:var(--accent);}
   .pill-teal{background:var(--teal-soft);color:var(--teal);}
+  .card-quote{margin:0;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px;}
+  .card-quote blockquote{margin:0;font-size:13px;line-height:1.6;font-style:italic;color:var(--text-muted);}
+  .card-quote figcaption{font-size:12px;color:var(--text-muted);}
+  .card-quote figcaption strong{color:var(--text);font-weight:600;}
+  .card-quote figcaption a{color:var(--teal);text-decoration:none;}
+  .card-quote figcaption a:hover{text-decoration:underline;}
 
   .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
   .about-inner{max-width:720px;display:flex;flex-direction:column;gap:20px;}
@@ -322,15 +328,20 @@
 
       <div class="card">
         <div class="card-head">
-          <h3>Product Audits for Companies</h3>
-          <span class="pill pill-teal">FOR TEAMS</span>
+          <h3>Consulting</h3>
+          <span class="pill pill-teal">FOR STARTUPS &amp; TEAMS</span>
         </div>
-        <p>A structured review of your product process, from someone who runs one inside a regulated environment daily.</p>
+        <p>A complete teardown of your product, from positioning to core flow. No vague advice, just a clear, prioritized action plan so your users see the value you already built.</p>
         <ul>
-          <li>Backlog health check across your whole pipeline</li>
-          <li>Stakeholder alignment gaps, named clearly</li>
-          <li>Delivery cadence recommendations you can act on</li>
+          <li>Every step your users take, reviewed like a first-time user would see it</li>
+          <li>Scorecard with top 3 quick wins and top 3 strategic changes, ranked by impact and effort</li>
+          <li>Every recommendation backed by what your users actually see</li>
+          <li>Recommendations tied to your goal: acquisition, activation or retention</li>
         </ul>
+        <figure class="card-quote">
+          <blockquote>&ldquo;A complete teardown of our product from a new user&rsquo;s perspective. Exactly the kind of detailed feedback we were hoping for, and it&rsquo;s genuinely helping us identify gaps and improve the experience.&rdquo;</blockquote>
+          <figcaption><strong><a href="https://www.instagram.com/_arif.khan._/" target="_blank" rel="noopener">Arif Khan</a></strong>, Co-founder, Builder Kopilot</figcaption>
+        </figure>
         <a class="btn-card btn-card-teal" href="mailto:drivetheproduct@gmail.com?subject=Notify%20me%20-%20Company%20Audit">Ask about an audit &rarr;</a>
       </div>
     </div>

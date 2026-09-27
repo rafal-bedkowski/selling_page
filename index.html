@@ -67,8 +67,9 @@
   .freebie-card h3{font-size:20px;font-weight:600;}
   .freebie-card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
   .freebie-form{display:flex;flex-direction:column;gap:12px;}
-  .freebie-form input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg-alt);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;}
-  .freebie-form input::placeholder{color:var(--text-muted);}
+  .freebie-form input,.freebie-form textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg-alt);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;}
+  .freebie-form textarea{resize:vertical;min-height:80px;}
+  .freebie-form input::placeholder,.freebie-form textarea::placeholder{color:var(--text-muted);}
   .freebie-form button{border:none;cursor:pointer;font-family:'IBM Plex Sans',system-ui,sans-serif;}
   .freebie-note{font-size:12px;color:var(--text-muted);margin:0;}
 
@@ -342,7 +343,13 @@
           <blockquote>&ldquo;A complete teardown of our product from a new user&rsquo;s perspective. Exactly the kind of detailed feedback we were hoping for, and it&rsquo;s genuinely helping us identify gaps and improve the experience.&rdquo;</blockquote>
           <figcaption><strong><a href="https://www.instagram.com/_arif.khan._/" target="_blank" rel="noopener">Arif Khan</a></strong>, Co-founder, Builder Kopilot</figcaption>
         </figure>
-        <a class="btn-card btn-card-teal" href="mailto:drivetheproduct@gmail.com?subject=Notify%20me%20-%20Company%20Audit">Ask about an audit &rarr;</a>
+        <form class="freebie-form" id="consultingForm" action="https://formspree.io/f/xnpnoody" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <textarea name="message" placeholder="What do you need help with?" required rows="3"></textarea>
+          <input type="hidden" name="_subject" value="New consulting inquiry — drivetheproduct.pm">
+          <button type="submit" class="btn-card btn-card-teal">Ask about consulting &rarr;</button>
+        </form>
+        <p class="freebie-note" id="consultingSuccess" style="display:none;">Thanks — I'll get back to you soon.</p>
       </div>
     </div>
   </section>
@@ -407,6 +414,31 @@
           }).then(function(response){
             if(response.ok){
               window.location.href = 'thanks.html';
+            } else {
+              throw new Error('Submission failed');
+            }
+          }).catch(function(){
+            if(submitBtn){ submitBtn.textContent = originalText; submitBtn.disabled = false; }
+            alert('Something went wrong — please try again or email drivetheproduct@gmail.com directly.');
+          });
+        });
+      }
+      var consultingForm = document.getElementById('consultingForm');
+      if(consultingForm){
+        consultingForm.addEventListener('submit', function(e){
+          e.preventDefault();
+          var submitBtn = consultingForm.querySelector('button[type="submit"]');
+          var originalText = submitBtn ? submitBtn.textContent : '';
+          if(submitBtn){ submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+          fetch(consultingForm.action, {
+            method: 'POST',
+            body: new FormData(consultingForm),
+            headers: { 'Accept': 'application/json' }
+          }).then(function(response){
+            if(response.ok){
+              consultingForm.style.display = 'none';
+              var successMsg = document.getElementById('consultingSuccess');
+              if(successMsg){ successMsg.style.display = 'block'; }
             } else {
               throw new Error('Submission failed');
             }

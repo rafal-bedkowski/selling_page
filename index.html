@@ -110,8 +110,6 @@
     .about{padding:48px 20px;}
     .closing{padding:48px 20px;}
     footer{padding:32px 20px;flex-direction:column;align-items:flex-start;gap:12px;}
-    .newsletter-card h2{font-size:24px;}
-    .newsletter-card p{font-size:14px;}
   }
 
   .products-waitlist-card{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin:0 auto;}
@@ -129,24 +127,18 @@
     #products-waitlist .formkit-input{padding:12px 14px !important;font-size:14px !important;}
     #products-waitlist .formkit-submit{padding:14px !important;font-size:14px !important;}
   }
-  /* Kit newsletter embed — layout fallback only; colors are set in Kit's own Custom CSS panel */
-  .newsletter-card{width:100%;max-width:420px;background:transparent;border:none;padding:0;gap:16px;}
-  .newsletter-card h2{font-size:32px;font-weight:700;}
-  .newsletter-card p{font-size:16px;line-height:1.6;color:var(--text-muted);margin:0;max-width:520px;}
-  .newsletter-skip{font-size:13px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;color:var(--text-muted);text-decoration:underline;cursor:pointer;margin-top:8px;}
-  .newsletter-skip:hover{color:var(--text);}
-  /* Fallback styling for the Kit embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
-  #newsletter .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
-  #newsletter .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
-  #newsletter .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
-  #newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
-  #newsletter .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
-  #newsletter .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
-  #newsletter .formkit-submit>span{padding:0 !important;display:block !important;}
-  #newsletter .formkit-powered-by,#newsletter .formkit-powered-by-convertkit-text,#newsletter [data-element="powered-by"]{display:none !important;}
+  /* Fallback styling for the Kit freebie/newsletter embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
+  #freebies .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #freebies .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
+  #freebies .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
+  #freebies .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #freebies .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
+  #freebies .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
+  #freebies .formkit-submit>span{padding:0 !important;display:block !important;}
+  #freebies .formkit-powered-by,#freebies .formkit-powered-by-convertkit-text,#freebies [data-element="powered-by"]{display:none !important;}
   @media (max-width:480px){
-    #newsletter .formkit-input{padding:12px 14px !important;font-size:14px !important;}
-    #newsletter .formkit-submit{padding:14px !important;font-size:14px !important;}
+    #freebies .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #freebies .formkit-submit{padding:14px !important;font-size:14px !important;}
   }
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
@@ -229,9 +221,8 @@
     <div class="nav-right">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
       <div class="nav-links" id="navLinks">
-        <a href="#freebies">Freebies</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="#offers">Offers</a>
+        <a href="#freebies">Free PDF</a>
+        <a href="#offers">Work with me</a>
         <a href="#about">About</a>
         <a href="https://instagram.com/drivetheproduct">Instagram</a>
       </div>
@@ -259,15 +250,15 @@
   <section class="proof">
     <div class="proof-inner">
       <div class="proof-stat">
-        <div class="proof-num">120+</div>
+        <div class="proof-num">154+</div>
         <div class="proof-label">posts breaking down real PM/PO work — no theory</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">182,500+</div>
+        <div class="proof-num">250,000+</div>
         <div class="proof-label">monthly views from junior PMs and career switchers</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">465+</div>
+        <div class="proof-num">957+</div>
         <div class="proof-label">people following the journey, growing every week</div>
       </div>
     </div>
@@ -275,8 +266,8 @@
 
   <section id="freebies" class="freebies">
     <div class="freebies-head">
-      <h2>Free stuff, no waitlist</h2>
-      <p>Grab something useful right now — drop your name and email and it lands straight in your inbox.</p>
+      <h2>You're not behind. You just don't have the map yet.</h2>
+      <p>Start with a free PDF. Then one real story a week: what worked, what fell apart, what I wish someone had told me on day one.</p>
     </div>
 
     <div class="freebie-card">
@@ -285,23 +276,8 @@
         <span class="pill pill-teal">FREE PDF</span>
       </div>
       <p>The exact prompts I use to speed up discovery, write specs, and prep for stakeholder conversations — copy, paste, adapt.</p>
-      <form class="freebie-form" id="freebieForm" action="https://formspree.io/f/xqpaazpn" method="POST">
-        <input type="text" name="name" placeholder="Your first name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <input type="hidden" name="_subject" value="New freebie signup — 7 AI Prompts for PMs">
-        <input type="hidden" name="_next" value="https://drivetheproduct.pm/thanks.html">
-        <button type="submit" class="btn-card btn-card-teal">Send me the PDF &rarr;</button>
-      </form>
-      <p class="freebie-note">No spam. Unsubscribe anytime. You'll also start hearing about future waitlist openings.</p>
-    </div>
-  </section>
-
-  <section id="newsletter" class="freebies" style="background:var(--bg);border-top:none;">
-    <div class="freebie-card newsletter-card" style="align-items:center;text-align:center;">
-      <h2>You're not behind. You just don't have the map yet.</h2>
-      <p>That feeling — like everyone else got a manual you never received — isn't true, and it's not permanent. Every week, one real story from someone walking the same road, just a few steps ahead: what worked, what fell apart, what I wish someone had told me on day one. Not lectures from above. Just someone in it with you, sharing what he's finding along the way.</p>
       <script async data-uid="d423bae253" src="https://drivetheproduct.kit.com/d423bae253/index.js"></script>
-      <span class="newsletter-skip" id="newsletterSkip">No thanks</span>
+      <p class="freebie-note">Confirm your email and the PDF is yours. One email a week after that, unsubscribe anytime.</p>
     </div>
   </section>
 
@@ -329,12 +305,11 @@
           <li>Stakeholder conversations you can walk into prepared</li>
           <li>Writing specs nobody misreads</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <h3>1:1 Consultations &amp; Mentoring</h3>
+          <h3>1:1 Mentoring</h3>
           <span class="pill pill-accent">COMING SOON</span>
         </div>
         <p>One honest conversation, focused on your actual situation.</p>
@@ -343,7 +318,6 @@
           <li>CV and interview prep, ATS-ready</li>
           <li>Working through a real product problem together</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
@@ -357,7 +331,6 @@
           <li>Roadmap one-pagers stakeholders actually read</li>
           <li>Stakeholder update templates that build trust</li>
         </ul>
-        <a class="btn-card btn-card-accent" href="#products-waitlist">Join the waitlist &rarr;</a>
       </div>
 
       <div class="card">
@@ -427,29 +400,6 @@
           });
         });
       }
-      var freebieForm = document.getElementById('freebieForm');
-      if(freebieForm){
-        freebieForm.addEventListener('submit', function(e){
-          e.preventDefault();
-          var submitBtn = freebieForm.querySelector('button[type="submit"]');
-          var originalText = submitBtn ? submitBtn.textContent : '';
-          if(submitBtn){ submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
-          fetch(freebieForm.action, {
-            method: 'POST',
-            body: new FormData(freebieForm),
-            headers: { 'Accept': 'application/json' }
-          }).then(function(response){
-            if(response.ok){
-              window.location.href = 'thanks.html';
-            } else {
-              throw new Error('Submission failed');
-            }
-          }).catch(function(){
-            if(submitBtn){ submitBtn.textContent = originalText; submitBtn.disabled = false; }
-            alert('Something went wrong — please try again or email drivetheproduct@gmail.com directly.');
-          });
-        });
-      }
       var consultingModal = document.getElementById('consultingModal');
       var consultingOpenBtn = document.getElementById('consultingOpenBtn');
       var consultingCloseBtn = document.getElementById('consultingCloseBtn');
@@ -502,13 +452,6 @@
             if(submitBtn){ submitBtn.textContent = originalText; submitBtn.disabled = false; }
             alert('Something went wrong — please try again or email drivetheproduct@gmail.com directly.');
           });
-        });
-      }
-      var skip = document.getElementById('newsletterSkip');
-      if(skip){
-        skip.addEventListener('click', function(){
-          var section = document.getElementById('newsletter');
-          if(section){ section.style.display = 'none'; }
         });
       }
     })();

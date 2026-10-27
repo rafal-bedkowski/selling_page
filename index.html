@@ -140,6 +140,19 @@
     #freebies .formkit-input{padding:12px 14px !important;font-size:14px !important;}
     #freebies .formkit-submit{padding:14px !important;font-size:14px !important;}
   }
+  /* Fallback styling for the Kit closing newsletter embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
+  #closing-newsletter .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #closing-newsletter .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
+  #closing-newsletter .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
+  #closing-newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #closing-newsletter .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
+  #closing-newsletter .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
+  #closing-newsletter .formkit-submit>span{padding:0 !important;display:block !important;}
+  #closing-newsletter .formkit-powered-by,#closing-newsletter .formkit-powered-by-convertkit-text,#closing-newsletter [data-element="powered-by"]{display:none !important;}
+  @media (max-width:480px){
+    #closing-newsletter .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #closing-newsletter .formkit-submit{padding:14px !important;font-size:14px !important;}
+  }
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
   .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .card h3{font-size:20px;font-weight:600;}
@@ -184,6 +197,7 @@
   .closing{width:100%;padding:80px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .closing h2{font-size:34px;font-weight:700;max-width:640px;}
   .closing p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0;}
+  .closing-newsletter{width:100%;max-width:420px;}
 
   footer{width:100%;padding:48px;border-top:1px solid var(--line);background:var(--bg-alt);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
   footer .copy{font-size:14px;color:var(--text-muted);}
@@ -226,7 +240,7 @@
         <a href="#about">About</a>
         <a href="https://instagram.com/drivetheproduct">Instagram</a>
       </div>
-      <a class="btn-accent" href="#products-waitlist">Join the waitlist</a>
+      <a class="btn-accent" href="#freebies">Join the waitlist</a>
     </div>
   </nav>
 
@@ -266,8 +280,8 @@
 
   <section id="freebies" class="freebies">
     <div class="freebies-head">
-      <h2>You're not behind. You just don't have the map yet.</h2>
-      <p>Start with a free PDF. Then one real story a week: what worked, what fell apart, what I wish someone had told me on day one.</p>
+      <h2>Free stuff, plus first access</h2>
+      <p>Grab the free PDF and get first access plus founder pricing when each product launches.</p>
     </div>
 
     <div class="freebie-card">
@@ -276,8 +290,8 @@
         <span class="pill pill-teal">FREE PDF</span>
       </div>
       <p>The exact prompts I use to speed up discovery, write specs, and prep for stakeholder conversations — copy, paste, adapt.</p>
-      <script async data-uid="d423bae253" src="https://drivetheproduct.kit.com/d423bae253/index.js"></script>
-      <p class="freebie-note">Confirm your email and the PDF is yours. One email a week after that, unsubscribe anytime.</p>
+      <script async data-uid="9d0b7f2013" src="https://drivetheproduct.kit.com/9d0b7f2013/index.js"></script>
+      <p class="freebie-note">Confirm your email and the PDF is yours. You'll also get first access and founder pricing when each product launches.</p>
     </div>
   </section>
 
@@ -285,12 +299,6 @@
     <div class="offers-head">
       <h2>What's coming</h2>
       <p>Built for people figuring out product management for the first time — not seasoned directors. Join the waitlist for the ones you want and you'll get first access, plus founder pricing before public launch.</p>
-    </div>
-
-    <div class="products-waitlist-card" id="products-waitlist">
-      <h3>Get notified the moment these launch</h3>
-      <p>First access + founder pricing, no spam.</p>
-      <script async data-uid="a7a0a2724e" src="https://drivetheproduct.kit.com/a7a0a2724e/index.js"></script>
     </div>
 
     <div class="grid">
@@ -363,8 +371,10 @@
 
   <section class="closing">
     <h2>Ready to stop guessing?</h2>
-    <p>Join the waitlist now — no spam, just a heads-up the moment each product goes live, plus founder pricing for early subscribers.</p>
-    <a class="btn-primary" href="#products-waitlist">Join the waitlist</a>
+    <p>One real story a week — what worked, what fell apart, what I wish someone had told me on day one. Product launches and founder pricing come first to people on the list.</p>
+    <div class="closing-newsletter" id="closing-newsletter">
+      <script async data-uid="ba836fe4b6" src="https://drivetheproduct.kit.com/ba836fe4b6/index.js"></script>
+    </div>
   </section>
 
   <footer>

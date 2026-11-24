@@ -72,7 +72,7 @@
   .freebie-card h3{font-size:20px;font-weight:600;}
   .freebie-card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
   .freebie-form{display:flex;flex-direction:column;gap:12px;}
-  .freebie-form input,.freebie-form textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg-alt);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;}
+  .freebie-form input,.freebie-form textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line-strong);background:var(--bg-alt);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;}
   .freebie-form textarea{resize:vertical;min-height:80px;}
   .freebie-form input::placeholder,.freebie-form textarea::placeholder{color:var(--text-muted);}
   .freebie-form button{border:none;cursor:pointer;font-family:'IBM Plex Sans',system-ui,sans-serif;}
@@ -136,26 +136,26 @@
   #freebies .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
   #freebies .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
   #freebies .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
-  #freebies .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #freebies .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid var(--line-strong) !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;text-align:center !important;}
   #freebies .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
   #freebies .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
   #freebies .formkit-submit>span{padding:0 !important;display:block !important;}
   #freebies .formkit-powered-by,#freebies .formkit-powered-by-convertkit-text,#freebies [data-element="powered-by"]{display:none !important;}
   @media (max-width:480px){
-    #freebies .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #freebies .formkit-input{padding:12px 14px !important;font-size:16px !important;}
     #freebies .formkit-submit{padding:14px !important;font-size:14px !important;}
   }
   /* Fallback styling for the Kit closing newsletter embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
   #closing-newsletter .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
   #closing-newsletter .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
   #closing-newsletter .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
-  #closing-newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
+  #closing-newsletter .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid var(--line-strong) !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;text-align:center !important;}
   #closing-newsletter .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
   #closing-newsletter .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#1B2E28 !important;color:#57C2A0 !important;border:1px solid rgba(87,194,160,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
   #closing-newsletter .formkit-submit>span{padding:0 !important;display:block !important;}
   #closing-newsletter .formkit-powered-by,#closing-newsletter .formkit-powered-by-convertkit-text,#closing-newsletter [data-element="powered-by"]{display:none !important;}
   @media (max-width:480px){
-    #closing-newsletter .formkit-input{padding:12px 14px !important;font-size:14px !important;}
+    #closing-newsletter .formkit-input{padding:12px 14px !important;font-size:16px !important;}
     #closing-newsletter .formkit-submit{padding:14px !important;font-size:14px !important;}
   }
   .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;}
@@ -222,9 +222,9 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="consulting-modal" id="consultingModal">
-    <div class="consulting-modal-card">
+    <div class="consulting-modal-card" role="dialog" aria-modal="true" aria-labelledby="consultingTitle">
       <button type="button" class="consulting-modal-close" id="consultingCloseBtn" aria-label="Close">&times;</button>
-      <h3>Ask about consulting</h3>
+      <h3 id="consultingTitle">Ask about consulting</h3>
       <p>It's just me on the other end of this — happy to hear whatever's on your mind.</p>
       <form class="freebie-form" id="consultingForm" action="https://formspree.io/f/xnpnoody" method="POST">
         <input type="text" name="name" placeholder="Your name" required>
@@ -423,8 +423,10 @@
       var consultingCloseBtn = document.getElementById('consultingCloseBtn');
       var consultingForm = document.getElementById('consultingForm');
       var consultingSuccess = document.getElementById('consultingSuccess');
+      var consultingLastFocus = null;
       function openConsultingModal(){
         if(!consultingModal) return;
+        consultingLastFocus = document.activeElement;
         consultingModal.classList.add('open');
         document.body.style.overflow = 'hidden';
         var nameInput = consultingForm ? consultingForm.querySelector('input[name="name"]') : null;
@@ -432,8 +434,10 @@
       }
       function closeConsultingModal(){
         if(!consultingModal) return;
+        var wasOpen = consultingModal.classList.contains('open');
         consultingModal.classList.remove('open');
         document.body.style.overflow = '';
+        if(wasOpen && consultingLastFocus && consultingLastFocus.focus){ consultingLastFocus.focus(); }
       }
       if(consultingOpenBtn){
         consultingOpenBtn.addEventListener('click', openConsultingModal);
@@ -448,6 +452,17 @@
       }
       document.addEventListener('keydown', function(e){
         if(e.key === 'Escape'){ closeConsultingModal(); }
+        if(e.key === 'Tab' && consultingModal && consultingModal.classList.contains('open')){
+          var items = Array.prototype.filter.call(
+            consultingModal.querySelectorAll('button, a[href], input, textarea, select'),
+            function(el){ return !el.disabled && el.offsetParent !== null; }
+          );
+          if(!items.length) return;
+          var first = items[0], last = items[items.length - 1];
+          if(!consultingModal.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+          else if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
       });
       if(consultingForm){
         consultingForm.addEventListener('submit', function(e){

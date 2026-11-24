@@ -6,7 +6,7 @@
 <title>drivetheproduct — Digital Products</title>
 <meta name="description" content="I help junior PMs and career switchers grow faster than I did. Digital products from a medtech Department Manager — launching soon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
   .hero{width:100%;padding:96px 48px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
@@ -157,10 +157,10 @@
   }
 
   .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
-  .about-inner{max-width:720px;display:flex;align-items:flex-start;gap:32px;}
+  .about-inner{max-width:720px;display:flex;align-items:center;gap:32px;}
   .about-text{display:flex;flex-direction:column;gap:20px;}
   .about-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;}
-  @media (max-width:720px){.about-inner{flex-direction:column;} .about-photo{width:96px;height:96px;}}
+  @media (max-width:720px){.about-inner{flex-direction:column;align-items:flex-start;} .about-photo{width:96px;height:96px;}}
   .about h2{font-size:30px;font-weight:700;}
   .about p{font-size:16px;line-height:1.7;color:var(--text-muted);margin:0;}
 
@@ -169,6 +169,76 @@
   .closing p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0;}
   .closing-newsletter{width:100%;max-width:420px;}
 
+
+  /* ===== Editorial layer (Medium-inspired): serif reading text, one narrow column, flat sections ===== */
+  .hero{max-width:760px;margin:0 auto;align-items:flex-start;text-align:left;padding:88px 24px 56px;gap:20px;}
+  .hero h1{font-size:54px;line-height:1.08;letter-spacing:-0.02em;max-width:none;}
+  .hero p{font-family:var(--font-serif);font-size:21px;line-height:1.6;color:var(--text-body);max-width:none;}
+  .hero-cta{justify-content:flex-start;}
+  .hero-note{font-family:var(--font-serif);font-style:italic;font-size:15px;margin-top:0;}
+  .strip{max-width:760px;margin:0 auto;background:transparent;padding:20px 24px;justify-content:flex-start;gap:10px 28px;}
+  .strip div{font-size:14px;font-weight:400;color:var(--text-muted);}
+  .proof{max-width:760px;margin:0 auto;padding:48px 24px;justify-content:flex-start;}
+  .proof-inner{max-width:none;text-align:left;gap:32px;}
+  .proof-num{font-size:40px;letter-spacing:-0.02em;}
+  .proof-label{font-family:var(--font-serif);font-size:15px;line-height:1.5;}
+  .home-blog{width:100%;max-width:760px;margin:0 auto;padding:8px 24px 48px;}
+  .home-blog-head{display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--line);padding-top:32px;margin-bottom:4px;}
+  .home-blog-head h2{font-size:28px;letter-spacing:-0.01em;}
+  .home-blog-head .more{font-size:14px;color:var(--text-muted);}
+  .home-blog-head .more:hover{color:var(--text);}
+  .freebies{max-width:760px;margin:0 auto;background:transparent;border:0;border-top:1px solid var(--line);align-items:flex-start;padding:56px 24px;gap:28px;}
+  .freebies-head{text-align:left;max-width:none;}
+  .freebies-head h2{font-size:34px;letter-spacing:-0.01em;}
+  .freebies-head p{font-family:var(--font-serif);font-size:19px;line-height:1.6;color:var(--text-body);}
+  .freebie-card{max-width:none;background:transparent;border:0;border-left:3px solid var(--teal);border-radius:0;padding:4px 0 4px 24px;}
+  .freebie-card h3{font-size:22px;}
+  .freebie-card p{font-family:var(--font-serif);font-size:17px;line-height:1.65;color:var(--text-body);}
+  .freebie-card .freebie-note{font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;color:var(--text-muted);}
+  .offers{max-width:760px;margin:0 auto;align-items:flex-start;padding:56px 24px;gap:8px;border-top:1px solid var(--line);}
+  .offers-head{text-align:left;max-width:none;margin-bottom:16px;}
+  .offers-head h2{font-size:34px;letter-spacing:-0.01em;}
+  .offers-head p{font-family:var(--font-serif);font-size:19px;line-height:1.6;color:var(--text-body);}
+  .grid{grid-template-columns:1fr;gap:0;max-width:none;}
+  .grid .card:last-child{grid-column:auto;}
+  .card{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:28px 0;gap:12px;}
+  .card h3{font-size:24px;letter-spacing:-0.01em;}
+  .card p{font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--text-body);}
+  .card ul li{font-family:var(--font-serif);font-size:17px;line-height:1.55;color:var(--text-body);}
+  .waitlist{max-width:480px;align-items:flex-start;text-align:left;margin-top:32px;padding-top:32px;border-top:1px solid var(--line);}
+  .waitlist h3{font-size:24px;}
+  .waitlist p{font-family:var(--font-serif);font-size:18px;color:var(--text-body);}
+  .consulting{max-width:760px;margin:0 auto;background:transparent;border:0;border-top:1px solid var(--line);align-items:flex-start;padding:56px 24px;gap:24px;}
+  .consulting-head{text-align:left;max-width:none;}
+  .consulting-head h2{font-size:34px;letter-spacing:-0.01em;}
+  .consulting-head p{font-family:var(--font-serif);font-size:19px;line-height:1.6;color:var(--text-body);}
+  .consulting .card{max-width:none;border-top:0;padding-top:0;}
+  .card-quote{border-top:0;border-left:3px solid var(--accent);padding:2px 0 2px 20px;}
+  .card-quote blockquote{font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--text-body);}
+  .about{max-width:760px;margin:0 auto;border-top:1px solid var(--line);padding:56px 24px;justify-content:flex-start;}
+  .about-inner{max-width:none;}
+  .about h2{font-size:30px;letter-spacing:-0.01em;}
+  .about p{font-family:var(--font-serif);font-size:19px;line-height:1.7;color:var(--text-body);}
+  .closing{max-width:760px;margin:0 auto;background:transparent;border:0;border-top:1px solid var(--line);align-items:flex-start;text-align:left;padding:56px 24px;gap:16px;}
+  .closing h2{max-width:none;font-size:34px;letter-spacing:-0.01em;}
+  .closing p{max-width:none;font-family:var(--font-serif);font-size:19px;line-height:1.6;color:var(--text-body);}
+  .closing-newsletter{max-width:420px;}
+  .consulting .btn-card{align-self:flex-start;}
+  @media (max-width:720px){
+    .hero{padding:56px 20px 40px;}
+    .hero h1{font-size:36px;}
+    .hero p{font-size:19px;}
+    .strip,.proof,.freebies,.offers,.consulting,.about,.closing,.home-blog{padding-left:20px;padding-right:20px;}
+    .freebies,.offers,.consulting,.about,.closing{padding-top:40px;padding-bottom:40px;}
+    .freebies-head h2,.offers-head h2,.consulting-head h2,.closing h2{font-size:28px;}
+    .proof-num{font-size:32px;}
+    .card p,.freebies-head p,.offers-head p,.consulting-head p,.about p,.closing p{font-size:17px;}
+    .freebie-card{padding-left:16px;}
+  }
+  @media (max-width:480px){
+    .hero h1{font-size:32px;}
+    .hero p{font-size:18px;}
+  }
 </style>
 </head>
 <body>
@@ -193,6 +263,7 @@
     <div class="nav-right">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
       <div class="nav-links" id="navLinks">
+        <a href="/blog/">Blog</a>
         <a href="#freebies">Free PDF</a>
         <a href="#offers">Work with me</a>
         <a href="#consulting">For teams</a>
@@ -209,8 +280,8 @@
     <h1>Product skills, without the guesswork.</h1>
     <p>I help junior PMs and career switchers grow faster than I did — real frameworks from a Department Manager in a regulated medtech environment. No certification fluff, no theory-only advice.</p>
     <div class="hero-cta">
-      <a class="btn-primary" href="#offers">Get early access</a>
-      <a class="btn-secondary" href="https://instagram.com/drivetheproduct">Follow the journey</a>
+      <a class="btn-primary" href="#freebies">Get the free PDF</a>
+      <a class="btn-secondary" href="/blog/">Read the blog</a>
     </div>
     <div class="hero-note">Free to join the list. First access + founder pricing when each product launches.</div>
   </section>
@@ -236,6 +307,19 @@
         <div class="proof-label">people following the journey, growing every week</div>
       </div>
     </div>
+  </section>
+
+  <section id="blog" class="home-blog">
+    <div class="home-blog-head">
+      <h2>From the blog</h2>
+      <a class="more" href="/blog/">All posts &rarr;</a>
+    </div>
+    <a class="post-row" href="/blog/new-pm-onboarding-4-documents.html">
+      <div class="post-tags"><span class="tag">Working with People</span><span class="tag">Real Stories</span></div>
+      <h3>Onboarding in standups isn't onboarding: 4 documents to write</h3>
+      <p>Four documents to write in your first month on a new product team.</p>
+      <div class="post-meta">4 min read &middot; November 2026</div>
+    </a>
   </section>
 
   <section id="freebies" class="freebies">
@@ -316,10 +400,6 @@
     </div>
 
     <div class="card">
-        <div class="card-head">
-          <h3>Consulting</h3>
-          <span class="pill pill-teal">FOR STARTUPS &amp; TEAMS</span>
-        </div>
         <p>A complete teardown of your product, from positioning to core flow. No vague advice, just a clear, prioritized action plan so your users see the value you already built.</p>
         <ul>
           <li>Every step your users take, reviewed like a first-time user would see it</li>

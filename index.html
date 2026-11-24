@@ -47,6 +47,31 @@
   .offers-head h2{font-size:36px;font-weight:700;}
   .offers-head p{font-size:16px;color:var(--text-muted);margin:0;}
   .grid{width:100%;max-width:1160px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+  @media (min-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+  @media (min-width:721px) and (max-width:999px){.grid .card:last-child{grid-column:1 / -1;}}
+
+  .consulting{width:100%;padding:88px 48px;display:flex;flex-direction:column;align-items:center;gap:40px;background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .consulting-head{text-align:center;display:flex;flex-direction:column;gap:12px;max-width:640px;}
+  .consulting-head h2{font-size:36px;font-weight:700;}
+  .consulting-head p{font-size:16px;color:var(--text-muted);margin:0;}
+  .consulting .card{width:100%;max-width:760px;}
+
+  .waitlist{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
+  .waitlist h3{font-size:22px;font-weight:700;}
+  .waitlist p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
+  /* Fallback styling for the Kit products waitlist embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
+  #products-waitlist .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
+  #products-waitlist .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid var(--line-strong) !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;text-align:center !important;}
+  #products-waitlist .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
+  #products-waitlist .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#3A2A1C !important;color:#E8873A !important;border:1px solid rgba(232,135,58,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
+  #products-waitlist .formkit-submit>span{padding:0 !important;display:block !important;}
+  #products-waitlist .formkit-powered-by,#products-waitlist .formkit-powered-by-convertkit-text,#products-waitlist [data-element="powered-by"]{display:none !important;}
+  @media (max-width:480px){
+    #products-waitlist .formkit-input{padding:12px 14px !important;font-size:16px !important;}
+    #products-waitlist .formkit-submit{padding:14px !important;font-size:14px !important;}
+  }
   @media (max-width:720px){
     .grid{grid-template-columns:1fr;} .proof-inner{grid-template-columns:1fr;} .hero h1{font-size:38px;} .closing h2{font-size:28px !important;}
   }
@@ -65,26 +90,13 @@
     .freebie-card{padding:20px;}
     .offers{padding:48px 20px;}
     .offers-head h2{font-size:26px;}
+    .consulting{padding:48px 20px;gap:28px;}
+    .consulting-head h2{font-size:26px;}
     .card{padding:20px;}
     .about{padding:48px 20px;}
     .closing{padding:48px 20px;}
   }
 
-  .products-waitlist-card{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin:0 auto;}
-  .products-waitlist-card h3{font-size:22px;font-weight:700;}
-  .products-waitlist-card p{font-size:14px;line-height:1.6;color:var(--text-muted);margin:0;}
-  #products-waitlist .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
-  #products-waitlist .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
-  #products-waitlist .formkit-field{width:100% !important;margin:0 !important;padding:0 !important;}
-  #products-waitlist .formkit-input{width:100% !important;box-sizing:border-box !important;height:auto !important;line-height:1.4 !important;background:#15181D !important;border:1px solid #2A2F38 !important;color:#F3F0E9 !important;border-radius:8px !important;padding:16px !important;margin:0 !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:15px !important;text-align:center !important;}
-  #products-waitlist .formkit-input::placeholder{color:#9AA3AE !important;text-align:center !important;}
-  #products-waitlist .formkit-submit{width:100% !important;height:auto !important;line-height:1.4 !important;background:#3A2A1C !important;color:#E8873A !important;border:1px solid rgba(232,135,58,0.35) !important;border-radius:8px !important;padding:20px 16px !important;margin:0 !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.5px !important;font-family:'IBM Plex Sans',system-ui,sans-serif !important;font-size:16px !important;cursor:pointer !important;}
-  #products-waitlist .formkit-submit>span{padding:0 !important;display:block !important;}
-  #products-waitlist .formkit-powered-by,#products-waitlist .formkit-powered-by-convertkit-text,#products-waitlist [data-element="powered-by"]{display:none !important;}
-  @media (max-width:480px){
-    #products-waitlist .formkit-input{padding:12px 14px !important;font-size:14px !important;}
-    #products-waitlist .formkit-submit{padding:14px !important;font-size:14px !important;}
-  }
   /* Fallback styling for the Kit freebie/newsletter embed — loads instantly with our page, doesn't depend on Kit's CDN cache */
   #freebies .formkit-form{width:100% !important;max-width:100% !important;min-width:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;margin:0 !important;padding:0 !important;}
   #freebies .formkit-fields{display:flex !important;flex-direction:column !important;align-items:center !important;gap:20px !important;width:100% !important;margin:0 !important;padding:0 !important;}
@@ -145,7 +157,10 @@
   }
 
   .about{width:100%;padding:80px 48px;border-top:1px solid var(--line);display:flex;justify-content:center;}
-  .about-inner{max-width:720px;display:flex;flex-direction:column;gap:20px;}
+  .about-inner{max-width:720px;display:flex;align-items:flex-start;gap:32px;}
+  .about-text{display:flex;flex-direction:column;gap:20px;}
+  .about-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+  @media (max-width:720px){.about-inner{flex-direction:column;} .about-photo{width:96px;height:96px;}}
   .about h2{font-size:30px;font-weight:700;}
   .about p{font-size:16px;line-height:1.7;color:var(--text-muted);margin:0;}
 
@@ -180,6 +195,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#freebies">Free PDF</a>
         <a href="#offers">Work with me</a>
+        <a href="#consulting">For teams</a>
         <a href="#about">About</a>
         <a href="https://instagram.com/drivetheproduct">Instagram</a>
       </div>
@@ -208,15 +224,15 @@
   <section class="proof">
     <div class="proof-inner">
       <div class="proof-stat">
-        <div class="proof-num">154+</div>
+        <div class="proof-num">170+</div>
         <div class="proof-label">posts breaking down real PM/PO work — no theory</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">250,000+</div>
+        <div class="proof-num">260,000+</div>
         <div class="proof-label">monthly views from junior PMs and career switchers</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-num">957+</div>
+        <div class="proof-num">1,200+</div>
         <div class="proof-label">people following the journey, growing every week</div>
       </div>
     </div>
@@ -224,7 +240,7 @@
 
   <section id="freebies" class="freebies">
     <div class="freebies-head">
-      <h2>Free stuff, plus first access</h2>
+      <h2>Free PDF, plus first access</h2>
       <p>Grab the free PDF and get first access plus founder pricing when each product launches.</p>
     </div>
 
@@ -254,7 +270,7 @@
         <p>Short, focused courses on the exact skills that get junior PMs their first wins.</p>
         <ul>
           <li>Backlog management that doesn't collapse under scope creep</li>
-          <li>Stakeholder conversations you can walk into prepared</li>
+          <li>Stakeholder conversations you are ready for</li>
           <li>Writing specs nobody misreads</li>
         </ul>
       </div>
@@ -277,15 +293,29 @@
           <h3>Templates &amp; PDFs</h3>
           <span class="pill pill-accent">COMING SOON</span>
         </div>
-        <p>Ready-to-use docs from real product work — the ones nobody hands you on day one.</p>
+        <p>Ready-to-use docs from real product work — the ones nobody gives you when you start.</p>
         <ul>
           <li>Discovery briefs you can fill in and send today</li>
           <li>Roadmap one-pagers stakeholders actually read</li>
           <li>Stakeholder update templates that build trust</li>
         </ul>
       </div>
+    </div>
 
-      <div class="card">
+    <div class="waitlist" id="products-waitlist">
+      <h3>Get first access</h3>
+      <p>Join the list for the products. You'll hear first, plus founder pricing.</p>
+      <script async data-uid="0254f3bf76" src="https://drivetheproduct.kit.com/0254f3bf76/index.js"></script>
+    </div>
+  </section>
+
+  <section id="consulting" class="consulting">
+    <div class="consulting-head">
+      <h2>Consulting for startups &amp; teams</h2>
+      <p>The products above are for people learning product management. This one is for companies that already have a product.</p>
+    </div>
+
+    <div class="card">
         <div class="card-head">
           <h3>Consulting</h3>
           <span class="pill pill-teal">FOR STARTUPS &amp; TEAMS</span>
@@ -301,21 +331,24 @@
           <blockquote>&ldquo;A complete teardown of our product from a new user&rsquo;s perspective. Exactly the kind of detailed feedback we were hoping for, and it&rsquo;s genuinely helping us identify gaps and improve the experience.&rdquo;</blockquote>
           <figcaption><strong><a href="https://www.instagram.com/_arif.khan._/" target="_blank" rel="noopener">Arif Khan</a></strong>, Co-founder, Builder Kopilot</figcaption>
         </figure>
+        <p>Works remotely, in English. We find a time that fits your time zone.</p>
         <button type="button" class="btn-card btn-card-teal" id="consultingOpenBtn">Ask about consulting &rarr;</button>
-      </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="about-inner">
+      <img class="about-photo" src="img/rafal.jpg" width="120" height="120" alt="Rafał Będkowski" loading="lazy">
+      <div class="about-text">
       <h2>Who's behind this</h2>
       <p>I'm Rafał — Products and Software Development Department Manager at a medtech company, previously a Junior PM finding my own way through the same mistakes I now write about. @drivetheproduct is a public learning journal: real stories, real mistakes. If you're figuring out product management for the first time, you're the reason this exists.</p>
+      </div>
     </div>
   </section>
 
   <section class="closing">
-    <h2>Ready to stop guessing?</h2>
-    <p>One real story a week — what worked, what fell apart, what I wish someone had told me on day one. Product launches and founder pricing come first to people on the list.</p>
+    <h2>Get one real story a week</h2>
+    <p>What worked, what went wrong, and what I would do differently. Product launches and founder pricing come first to people on the list.</p>
     <div class="closing-newsletter" id="closing-newsletter">
       <script async data-uid="ba836fe4b6" src="https://drivetheproduct.kit.com/ba836fe4b6/index.js"></script>
     </div>
